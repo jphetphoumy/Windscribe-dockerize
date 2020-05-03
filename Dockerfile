@@ -14,6 +14,7 @@ RUN apt-get update && \
 	apt-get update && \
 	apt-get install -y --no-install-recommends windscribe-cli iptables resolvconf- python3 python3-pip && \
 	pip3 install -r requirements.txt && \
-	chmod +x entrypoint.sh
+	chmod +x entrypoint.sh && \
+ 	rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT ["./entrypoint.sh"]
