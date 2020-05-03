@@ -11,6 +11,7 @@ term_handler() {
 }
 
 trap 'kill ${!}; term_handler' SIGTERM
+trap 'kill ${!}; term_handler' SIGINT
 
 python3 /windscribe/windscribe-autologin.py &
 pid="$!"
